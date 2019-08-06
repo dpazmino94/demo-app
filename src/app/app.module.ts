@@ -12,6 +12,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { MatTreeModule } from '@angular/material/tree';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { MatTreeModule } from '@angular/material/tree';
     MatCardModule,
     MatButtonModule,
     MatDialogModule,
-    MatTreeModule
+    MatTreeModule,
+    MatCheckboxModule,
+    MatMenuModule
   ],
   entryComponents: [CommonDialogComponent],
   providers: [

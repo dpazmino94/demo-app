@@ -25,11 +25,26 @@ body {
 	width: 28rem;
 	background-image: url('/assets/note_paper_bg.jpg');
 	background-size: cover;
+	margin-bottom: 5rem;
 }
 .note_list_title {
 	font-family: 'Gochi Hand', cursive;
     font-size: 45px !important;
     text-align: center;
+}
+.checklist-leaf-node {
+	font-family: 'Gochi Hand', cursive;
+}
+
+.note_tree {
+	background: transparent;
+	font-family: 'Gochi Hand', cursive;
+}
+.mat-card-header {
+    justify-content: center;
+}
+.list_item {
+	width: 22rem;
 }
 
 // footer of the note list
@@ -61,7 +76,7 @@ body {
 	height: 25rem;
 	background-size: cover;
 	background-position: right;
-	width: 81rem;
+	width: 100rem;
     position: absolute;
     z-index: -1;
 }
@@ -83,7 +98,14 @@ body {
 .toolbar {
 	position: fixed;
     background-color: rgba(0, 0, 0, 0.70);
-    color: white;
+	color: white;
+	z-index: 9;
+}
+.menu_button {
+	padding: 0 14px;
+}
+.toolbar_spacer {
+	flex: 1 1 auto;
 }
 
 //
