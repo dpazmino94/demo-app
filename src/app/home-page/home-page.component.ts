@@ -1,41 +1,8 @@
 import { MatDialog } from '@angular/material/dialog';
 import { CommonDialogComponent } from './../common/common-dialog/common-dialog.component';
 import { Component, OnInit } from '@angular/core';
-import { FlatTreeControl } from '@angular/cdk/tree';
-import { MatTreeFlattener, MatTreeFlatDataSource } from '@angular/material/tree';
-
-/*
- * Food data with nested structure.
- * Each node has a name and an optiona list of children.
- */
-interface FoodNode {
-  name: string;
-  children?: FoodNode[];
-}
-const TREE_DATA: FoodNode[] = [
-  {
-    name: 'Fruit',
-    children: [
-      { name: 'Apple' },
-      { name: 'Banana' },
-      { name: 'Fruit loops' },
-    ]
-  }, {
-    name: 'Fruit',
-    children: [
-      { name: 'Apple' },
-      { name: 'Banana' },
-      { name: 'Fruit loops' },
-    ]
-  },
-];
-
-/** Flat node with expandable and level information */
-interface ExampleFlatNode {
-  expandable: boolean;
-  name: string;
-  level: number;
-}
+import { AngularFireStorage } from '@angular/fire/storage';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-home-page',
@@ -43,42 +10,52 @@ interface ExampleFlatNode {
   styleUrls: ['./home-page.component.scss']
 })
 
+export class HomePageComponent {
+  // Firebase Data
+  items: any;
+  // Expand variables
+  iconExpandText = 'more'; 
+  showDescription = [];
 
-export class HomePageComponent implements OnInit {
-  private transformer = (node: FoodNode, level: number) => {
-    return {
-      expandable: !!node.children && node.children.length > 0,
-      name: node.name,
-      level: level,
-    };
+  constructor(public dialog: MatDialog, db: AngularFirestore) {
+    // Firebase Data call
+    db.collection('items').valueChanges().subscribe(data => {
+      console.log(data);
+      this.items = data;
+    });
   }
 
-  treeControl = new FlatTreeControl<ExampleFlatNode>(
-    node => node.level, node => node.expandable);
-
-  treeFlattener = new MatTreeFlattener(
-    this.transformer, node => node.level, node => node.expandable, node => node.children);
-
-  dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
-
-  constructor(public dialog: MatDialog) { 
-    this.dataSource.data = TREE_DATA;
-  }
-
-  hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
-
+  /**
+   * This opens the common dialog
+   *
+   * @memberof HomePageComponent
+   */
   openDialog(): void {
     const dialogRef = this.dialog.open(CommonDialogComponent, {
       width: '250px',
       data: {}
     });
-
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
   }
 
-  ngOnInit() {
+  /**
+   * This expands the description in the list
+   *
+   * @memberof HomePageComponent
+   */
+  expandDescription(i: number) {
+    document.getElementById(i.toString()).innerText = 
+    (document.getElementById(i.toString()).innerText  == 'expand_more') ? 
+    'expand_less' : 'expand_more';
+    if (this.showDescription[i]) {
+      this.showDescription[i] = false;
+      this.iconExpandText = 'less'
+    } else {
+      this.showDescription[i] = true;
+      this.iconExpandText = 'more'
+    }
   }
 
 }

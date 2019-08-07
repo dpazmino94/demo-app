@@ -32,30 +32,27 @@
 			<!-- <mat-card-subtitle>Feel free to add, edit or delete any task or item that you want</mat-card-subtitle> -->
 		</mat-card-header>
 		<mat-card-content>
-
-
-			<mat-tree class="note_tree" [dataSource]="dataSource" [treeControl]="treeControl">
-				<!-- This is the tree node template for leaf nodes -->
-				<mat-tree-node *matTreeNodeDef="let node;" matTreeNodePadding>
-					<!-- use a disabled button to provide padding for tree leaf -->
-					<button mat-icon-button disabled></button>
-					{{node.name}}
-				</mat-tree-node>
-				<!-- This is the tree node template for expandable nodes -->
-				<mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
-					<button mat-icon-button matTreeNodeToggle [attr.aria-label]="'toggle ' + node.name">
-						<i class="material-icons">
-							{{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
-						</i>
-					</button>
-					<span class="list_item">
-						{{node.name}}
-					</span>
-					<mat-checkbox class="checklist-leaf-node"></mat-checkbox>
-				</mat-tree-node>
-			</mat-tree>
-
-
+			<ul>
+				<li class="text font" *ngFor="let item of items; let i = index;">
+					<div class="list_item">
+						<button mat-button (click)="expandDescription(i)">
+							<i [id]="i" class="material-icons">expand_more</i>
+						</button>
+						{{item.title}}
+						<button mat-button class="edit_button">
+							<i class="material-icons">edit</i>
+						</button>
+						<button mat-button class="delete_button">
+							<i class="material-icons">delete</i>
+						</button>
+					</div>
+					<div *ngIf="showDescription[i]" class="description_text">
+						<p>
+							{{item.description}}
+						</p>
+					</div>
+				</li>
+			</ul>
 		</mat-card-content>
 		<mat-card-actions class="notes_footer">
 			<button mat-fab (click)="openDialog()">

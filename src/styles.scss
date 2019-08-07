@@ -32,19 +32,31 @@ body {
     font-size: 45px !important;
     text-align: center;
 }
-.checklist-leaf-node {
-	font-family: 'Gochi Hand', cursive;
-}
-
-.note_tree {
-	background: transparent;
+.font, .checklist-leaf-node  {
 	font-family: 'Gochi Hand', cursive;
 }
 .mat-card-header {
     justify-content: center;
 }
 .list_item {
+	font-size: 20px;
 	width: 22rem;
+}
+ul {
+	list-style-type: none;
+    padding-left: 0px;
+}
+.edit_button, .delete_button {
+	position: absolute !important; 
+}
+.edit_button {
+	right: 3rem;
+}
+.delete_button {
+	right: 1rem;
+}
+.description_text {
+	padding-left: 6rem;
 }
 
 // footer of the note list
