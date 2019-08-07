@@ -1,0 +1,25 @@
+[debug] [2019-08-07T14:14:25.718Z] ----------------------------------------------------------------------
+[debug] [2019-08-07T14:14:25.723Z] Command:       /usr/local/bin/node /Users/DavidPazmino/ .npm-global/lib/node_modules/firebase-tools/lib/bin/firebase.js serve
+[debug] [2019-08-07T14:14:25.725Z] CLI Version:   7.2.2
+[debug] [2019-08-07T14:14:25.725Z] Platform:      darwin
+[debug] [2019-08-07T14:14:25.725Z] Node Version:  v10.16.1
+[debug] [2019-08-07T14:14:25.729Z] Time:          Wed Aug 07 2019 09:14:25 GMT-0500 (Ecuador Time)
+[debug] [2019-08-07T14:14:25.729Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-07T14:14:25.774Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-07T14:14:25.775Z] > authorizing via signed-in user
+[debug] [2019-08-07T14:14:25.775Z] [iam] checking project challenge-demo-app for permissions ["firebase.projects.get"]
+[debug] [2019-08-07T14:14:25.779Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/challenge-demo-app:testIamPermissions  
+
+[debug] [2019-08-07T14:14:26.421Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-07T14:14:26.424Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/challenge-demo-app  
+ 
+[debug] [2019-08-07T14:14:27.044Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/DavidPazmino/Documents/Proyectos/davidp-demo'...
+[info] 
+[debug] [2019-08-07T14:14:27.052Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/challenge-demo-app/webApps/-/config  
+ 
+[debug] [2019-08-07T14:14:27.694Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: dist/dp-cv
+[info] ✔  hosting: Local server: http://localhost:5000
