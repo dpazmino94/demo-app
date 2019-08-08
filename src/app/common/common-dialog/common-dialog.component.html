@@ -1,9 +1,16 @@
-<h1 mat-dialog-title>Hi </h1>
+<h1 mat-dialog-title>New list item</h1>
 <div mat-dialog-content>
-  <p>What's your favorite animal?</p>
-
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Enter a new item" [(ngModel)]="title" name="title">
+    </mat-form-field>
+    <br/>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Enter a description" [(ngModel)]="description" name="description">
+    </mat-form-field>
+  </form>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button cdkFocusInitial (click)="saveDataFirebase()">Save</button>
 </div>
