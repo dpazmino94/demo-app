@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomePageComponent } from './home-page/home-page.component';
 import { CommonDialogComponent } from './common/common-dialog/common-dialog.component'
+import { StoreModule } from '@ngrx/store';
+import { simpleReducer } from './common/common-reducer/simple.reducer';
 // Angular Material imports
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
@@ -29,6 +31,7 @@ import { MatInputModule } from '@angular/material/input';
   ],
   imports: [
     FormsModule,
+    StoreModule.forRoot({password: simpleReducer}),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,

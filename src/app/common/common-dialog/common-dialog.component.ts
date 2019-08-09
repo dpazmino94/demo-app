@@ -18,17 +18,25 @@ export class CommonDialogComponent implements AfterContentInit {
   dataItems: Object;
   // Variable that controls the delete functionality
   deleteController: boolean;
+  // Admin Password 
+  password: string;
   constructor(
     public dialogRef: MatDialogRef<any>,
     public db: AngularFirestore,
     @Inject(MAT_DIALOG_DATA) public data: any) {}
 
-  onNoClick(): void {
-    this.dialogRef.close();
+  /**
+   * This function closes the dialog when there are a click outside the dialog
+   *
+   * @param {string} [result]
+   * @memberof CommonDialogComponent
+   */
+  onNoClick(result?: string): void {
+    this.dialogRef.close(result);
   }
 
   ngAfterContentInit() {
-    if (this.data) { // This activates when it is an update dialog
+    if (this.data.title) { // This activates when it is an update dialog
       this.title = this.data.title;
       this.description = this.data.description;
       this.temporalId = this.data.id;
@@ -36,6 +44,11 @@ export class CommonDialogComponent implements AfterContentInit {
     }
   }
 
+  /**
+   * This function saves the data into Firebase
+   *
+   * @memberof CommonDialogComponent
+   */
   saveDataFirebase() {
     // Data model
     this.dataItems = {
@@ -43,7 +56,7 @@ export class CommonDialogComponent implements AfterContentInit {
       description: this.description
     };
     // This if controls the Update, Delete and Create functionality
-    if (this.data) { 
+    if (this.data.title) { 
       if (this.deleteController) { // Delete item
         this.db.collection('items').doc(this.temporalId)
         .delete().then(() => {

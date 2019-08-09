@@ -2,11 +2,12 @@
 <mat-toolbar class="toolbar">
 	<span>Demo App</span>
 	<span class="toolbar_spacer"></span>
+	<span *ngIf="password$ | async">Admin Mode</span>
 	<button mat-button [matMenuTriggerFor]="menu">
 		<i class="material-icons">menu</i>
 	</button>
 	<mat-menu class="menu_button" #menu="matMenu">
-		<button mat-menu-item>Item 1</button>
+		<button mat-menu-item (click)="enterAdminMode()">Enter on Admin mode</button>
 		<button mat-menu-item>Item 2</button>
 	</mat-menu>
 </mat-toolbar>
@@ -39,10 +40,12 @@
 							<i [id]="i" class="material-icons">expand_more</i>
 						</button>
 						{{item.title}}
-						<button mat-button class="edit_button" (click)="updateDeleteCollection(i, item.title, item.description, false)">
+						<button mat-button class="edit_button"  *ngIf="password$ | async"
+						(click)="updateDeleteCollection(i, item.title, item.description, false)">
 							<i class="material-icons">edit</i>
 						</button>
-						<button mat-button class="delete_button" (click)="updateDeleteCollection(i, item.title, item.description, true)">
+						<button mat-button class="delete_button" *ngIf="password$ | async" 
+						(click)="updateDeleteCollection(i, item.title, item.description, true)">
 							<i class="material-icons">delete</i>
 						</button>
 					</div>
@@ -55,7 +58,7 @@
 			</ul>
 		</mat-card-content>
 		<mat-card-actions class="notes_footer">
-			<button mat-fab (click)="openDialog()">
+			<button mat-fab (click)="openDialog()" *ngIf="password$ | async">
 				<i class="material-icons">add</i>
 			</button>
 		</mat-card-actions>

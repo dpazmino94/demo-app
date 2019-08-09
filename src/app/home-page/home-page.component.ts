@@ -1,8 +1,12 @@
 import { MatDialog } from '@angular/material/dialog';
 import { CommonDialogComponent } from './../common/common-dialog/common-dialog.component';
-import { Component, OnInit } from '@angular/core';
-import { AngularFireStorage } from '@angular/fire/storage';
+import { Component, AfterContentInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+interface AdminMode {
+  password: boolean;
+}
 
 @Component({
   selector: 'app-home-page',
@@ -10,14 +14,20 @@ import { AngularFirestore } from '@angular/fire/firestore';
   styleUrls: ['./home-page.component.scss']
 })
 
-export class HomePageComponent {
+export class HomePageComponent implements AfterContentInit {
+  // Redux variable state
+  password$: Observable<boolean>;
   // Firebase Data
   items = [];
   idItems = [];
   // Expand variables
-  iconExpandText = 'more'; 
+  iconExpandText = 'more';
   showDescription = [];
-  constructor(public dialog: MatDialog, private db: AngularFirestore) {
+  constructor(
+    public dialog: MatDialog,
+    private db: AngularFirestore,
+    private store: Store<AdminMode>) 
+  {
     // Firebase Data call
     db.collection('items').snapshotChanges().subscribe(data => {
       this.items = [];
@@ -27,6 +37,11 @@ export class HomePageComponent {
         this.idItems.push(element.payload.doc.id);
       });
     });
+  }
+
+  ngAfterContentInit() {
+    // Observe admin password
+    this.password$ = this.store.select('password');
   }
 
   /**
@@ -50,9 +65,9 @@ export class HomePageComponent {
    * @memberof HomePageComponent
    */
   expandDescription(i: number) {
-    document.getElementById(i.toString()).innerText = 
-    (document.getElementById(i.toString()).innerText  == 'expand_more') ? 
-    'expand_less' : 'expand_more';
+    document.getElementById(i.toString()).innerText =
+      (document.getElementById(i.toString()).innerText == 'expand_more') ?
+        'expand_less' : 'expand_more';
     if (this.showDescription[i]) {
       this.showDescription[i] = false;
       this.iconExpandText = 'less'
@@ -62,6 +77,15 @@ export class HomePageComponent {
     }
   }
 
+  /**
+   * This function calls the update and delete functionality dialog
+   *
+   * @param {number} index
+   * @param {string} title
+   * @param {string} description
+   * @param {boolean} deleteController
+   * @memberof HomePageComponent
+   */
   updateDeleteCollection(index: number, title: string, description: string, deleteController: boolean) {
     const dialogRef = this.dialog.open(CommonDialogComponent, {
       width: '250px',
@@ -76,4 +100,16 @@ export class HomePageComponent {
       console.log('The update dialog was closed');
     });
   }
+
+  enterAdminMode() {
+    const dialogRef = this.dialog.open(CommonDialogComponent, {
+      width: '300px',
+      data: {
+        state: true
+      }
+    });
+    dialogRef.afterClosed().subscribe(password => {
+      this.store.dispatch({type: password})
+    });
+  }  
 }
