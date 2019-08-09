@@ -58,7 +58,11 @@ ul {
 .description_text {
 	padding-left: 6rem;
 }
-
+.description_date {
+	color: gray;
+    font-size: 13px;
+    padding-left: 3rem;
+}
 // footer of the note list
 .notes_footer {
 	text-align: -webkit-right;

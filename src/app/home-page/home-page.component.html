@@ -40,19 +40,22 @@
 							<i [id]="i" class="material-icons">expand_more</i>
 						</button>
 						{{item.title}}
-						<button mat-button class="edit_button"  *ngIf="password$ | async"
-						(click)="updateDeleteCollection(i, item.title, item.description, false)">
+						<button mat-button class="edit_button" *ngIf="password$ | async"
+							(click)="updateDeleteCollection(i, item.title, item.description, false)">
 							<i class="material-icons">edit</i>
 						</button>
-						<button mat-button class="delete_button" *ngIf="password$ | async" 
-						(click)="updateDeleteCollection(i, item.title, item.description, true)">
+						<button mat-button class="delete_button" *ngIf="password$ | async"
+							(click)="updateDeleteCollection(i, item.title, item.description, true)">
 							<i class="material-icons">delete</i>
 						</button>
 					</div>
 					<div *ngIf="showDescription[i]" class="description_text">
 						<p>
-							{{item.description}}
+							{{item.description}} <span class="description_date">
+								-Added {{item.createdOn}}
+							</span>
 						</p>
+
 					</div>
 				</li>
 			</ul>
