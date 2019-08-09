@@ -127,23 +127,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _home_page_home_page_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./home-page/home-page.component */ "./src/app/home-page/home-page.component.ts");
-/* harmony import */ var _common_common_dialog_common_dialog_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./common/common-dialog/common-dialog.component */ "./src/app/common/common-dialog/common-dialog.component.ts");
-/* harmony import */ var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/toolbar */ "./node_modules/@angular/material/esm5/toolbar.es5.js");
-/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/card */ "./node_modules/@angular/material/esm5/card.es5.js");
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm5/button.es5.js");
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
-/* harmony import */ var _angular_material_tree__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/tree */ "./node_modules/@angular/material/esm5/tree.es5.js");
-/* harmony import */ var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/checkbox */ "./node_modules/@angular/material/esm5/checkbox.es5.js");
-/* harmony import */ var _angular_material_menu__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/menu */ "./node_modules/@angular/material/esm5/menu.es5.js");
-/* harmony import */ var _angular_fire__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/fire */ "./node_modules/@angular/fire/index.js");
-/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
-/* harmony import */ var _angular_fire_storage__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/fire/storage */ "./node_modules/@angular/fire/storage/index.js");
-/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/index.js");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _home_page_home_page_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./home-page/home-page.component */ "./src/app/home-page/home-page.component.ts");
+/* harmony import */ var _common_common_dialog_common_dialog_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./common/common-dialog/common-dialog.component */ "./src/app/common/common-dialog/common-dialog.component.ts");
+/* harmony import */ var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/toolbar */ "./node_modules/@angular/material/esm5/toolbar.es5.js");
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/card */ "./node_modules/@angular/material/esm5/card.es5.js");
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm5/button.es5.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var _angular_material_tree__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/tree */ "./node_modules/@angular/material/esm5/tree.es5.js");
+/* harmony import */ var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/checkbox */ "./node_modules/@angular/material/esm5/checkbox.es5.js");
+/* harmony import */ var _angular_material_menu__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/menu */ "./node_modules/@angular/material/esm5/menu.es5.js");
+/* harmony import */ var _angular_fire__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/fire */ "./node_modules/@angular/fire/index.js");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
+/* harmony import */ var _angular_fire_storage__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/fire/storage */ "./node_modules/@angular/fire/storage/index.js");
+/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/index.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/material/input */ "./node_modules/@angular/material/esm5/input.es5.js");
+
 
 
 
@@ -165,37 +168,40 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
-                _home_page_home_page_component__WEBPACK_IMPORTED_MODULE_6__["HomePageComponent"],
-                _common_common_dialog_common_dialog_component__WEBPACK_IMPORTED_MODULE_7__["CommonDialogComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
+                _home_page_home_page_component__WEBPACK_IMPORTED_MODULE_7__["HomePageComponent"],
+                _common_common_dialog_common_dialog_component__WEBPACK_IMPORTED_MODULE_8__["CommonDialogComponent"]
             ],
             imports: [
-                _angular_fire__WEBPACK_IMPORTED_MODULE_15__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_19__["environment"].firebase),
-                _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_16__["AngularFirestoreModule"],
-                _angular_fire_auth__WEBPACK_IMPORTED_MODULE_18__["AngularFireAuthModule"],
-                _angular_fire_storage__WEBPACK_IMPORTED_MODULE_17__["AngularFireStorageModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+                _angular_fire__WEBPACK_IMPORTED_MODULE_16__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_20__["environment"].firebase),
+                _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_17__["AngularFirestoreModule"],
+                _angular_fire_auth__WEBPACK_IMPORTED_MODULE_19__["AngularFireAuthModule"],
+                _angular_fire_storage__WEBPACK_IMPORTED_MODULE_18__["AngularFireStorageModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["BrowserAnimationsModule"],
-                _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_8__["MatToolbarModule"],
-                _angular_material_card__WEBPACK_IMPORTED_MODULE_9__["MatCardModule"],
-                _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButtonModule"],
-                _angular_material_dialog__WEBPACK_IMPORTED_MODULE_11__["MatDialogModule"],
-                _angular_material_tree__WEBPACK_IMPORTED_MODULE_12__["MatTreeModule"],
-                _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_13__["MatCheckboxModule"],
-                _angular_material_menu__WEBPACK_IMPORTED_MODULE_14__["MatMenuModule"]
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"],
+                _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__["MatToolbarModule"],
+                _angular_material_card__WEBPACK_IMPORTED_MODULE_10__["MatCardModule"],
+                _angular_material_button__WEBPACK_IMPORTED_MODULE_11__["MatButtonModule"],
+                _angular_material_dialog__WEBPACK_IMPORTED_MODULE_12__["MatDialogModule"],
+                _angular_material_tree__WEBPACK_IMPORTED_MODULE_13__["MatTreeModule"],
+                _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_14__["MatCheckboxModule"],
+                _angular_material_menu__WEBPACK_IMPORTED_MODULE_15__["MatMenuModule"],
+                _angular_material_input__WEBPACK_IMPORTED_MODULE_21__["MatInputModule"]
             ],
-            entryComponents: [_common_common_dialog_common_dialog_component__WEBPACK_IMPORTED_MODULE_7__["CommonDialogComponent"]],
+            entryComponents: [_common_common_dialog_common_dialog_component__WEBPACK_IMPORTED_MODULE_8__["CommonDialogComponent"]],
             providers: [
-                { provide: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_11__["MAT_DIALOG_DEFAULT_OPTIONS"], useValue: { hasBackdrop: true } }
+                { provide: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_12__["MAT_DIALOG_DEFAULT_OPTIONS"], useValue: { hasBackdrop: true } }
             ],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -212,7 +218,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1 mat-dialog-title>Hi </h1>\n<div mat-dialog-content>\n  <p>What's your favorite animal?</p>\n\n</div>\n<div mat-dialog-actions>\n  <button mat-button (click)=\"onNoClick()\">No Thanks</button>\n  <button mat-button [mat-dialog-close]=\"data.animal\" cdkFocusInitial>Ok</button>\n</div>"
+module.exports = "<span *ngIf=\"!deleteController\" >\n    <h1 mat-dialog-title>New list item</h1>\n    <div mat-dialog-content>\n      <form class=\"example-form\">\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Enter a new item\" [(ngModel)]=\"title\" name=\"title\">\n        </mat-form-field>\n        <br/>\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Enter a description\" [(ngModel)]=\"description\" name=\"description\">\n        </mat-form-field>\n      </form>\n    </div>\n    <div mat-dialog-actions>\n      <button mat-button (click)=\"onNoClick()\">Cancel</button>\n      <button mat-button cdkFocusInitial (click)=\"saveDataFirebase()\">Save</button>\n    </div>\n</span>\n<span *ngIf=\"deleteController\" >\n    <h1 mat-dialog-title>Are you sure you want to delete this item?</h1>\n    <div mat-dialog-actions>\n      <button mat-button (click)=\"onNoClick()\">Cancel</button>\n      <button mat-button cdkFocusInitial (click)=\"saveDataFirebase()\">Delete</button>\n    </div>\n</span>"
 
 /***/ }),
 
@@ -238,29 +244,66 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CommonDialogComponent", function() { return CommonDialogComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+
 
 
 
 var CommonDialogComponent = /** @class */ (function () {
-    function CommonDialogComponent(dialogRef, data) {
+    function CommonDialogComponent(dialogRef, db, data) {
         this.dialogRef = dialogRef;
+        this.db = db;
         this.data = data;
     }
     CommonDialogComponent.prototype.onNoClick = function () {
         this.dialogRef.close();
     };
-    CommonDialogComponent.prototype.ngOnInit = function () {
+    CommonDialogComponent.prototype.ngAfterContentInit = function () {
+        if (this.data) { // This activates when it is an update dialog
+            this.title = this.data.title;
+            this.description = this.data.description;
+            this.temporalId = this.data.id;
+            this.deleteController = this.data.deleteController;
+        }
+    };
+    CommonDialogComponent.prototype.saveDataFirebase = function () {
+        var _this = this;
+        // Data model
+        this.dataItems = {
+            title: this.title,
+            description: this.description
+        };
+        if (this.data) { // Update or delete list item
+            if (this.deleteController) { // Delete item
+                this.db.collection('items').doc(this.temporalId)
+                    .delete().then(function () {
+                    _this.onNoClick();
+                });
+            }
+            else { // Update item
+                this.db.collection('items').doc(this.temporalId)
+                    .set(this.dataItems).then(function () {
+                    _this.onNoClick();
+                });
+            }
+        }
+        else { // Create list item
+            this.db.collection('items').add(this.dataItems).then(function () {
+                _this.onNoClick();
+            });
+        }
     };
     CommonDialogComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
             selector: 'app-common-dialog',
             template: __webpack_require__(/*! ./common-dialog.component.html */ "./src/app/common/common-dialog/common-dialog.component.html"),
             styles: [__webpack_require__(/*! ./common-dialog.component.scss */ "./src/app/common/common-dialog/common-dialog.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"], Object])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialogRef"],
+            _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_1__["AngularFirestore"], Object])
     ], CommonDialogComponent);
     return CommonDialogComponent;
 }());
@@ -276,7 +319,7 @@ var CommonDialogComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Toolbar -->\n<mat-toolbar class=\"toolbar\">\n\t<span>Demo App</span>\n\t<span class=\"toolbar_spacer\"></span>\n\t<button mat-button [matMenuTriggerFor]=\"menu\">\n\t\t<i class=\"material-icons\">menu</i>\n\t</button>\n\t<mat-menu class=\"menu_button\" #menu=\"matMenu\">\n\t\t<button mat-menu-item>Item 1</button>\n\t\t<button mat-menu-item>Item 2</button>\n\t</mat-menu>\n</mat-toolbar>\n<!-- Profile Banner -->\n<div class=\"banner_container\">\n\t<h1 class=\"banner_flex\">Full Stack Demo CRUD App</h1>\n\t<h3 class=\"banner_flex\">MongoDB, Express, Angular and NodeJS </h3>\n\t<h4 class=\"banner_flex\">(MEAN)</h4>\n\t<h5 class=\"banner_flex\">By: David Pazmino</h5>\n\t<div class=\"banner kenburns-top\">\n\n\t</div>\n</div>\n\n<div class=\"wrapper\">\n\t<img class=\"profile_image center\" src=\"assets/FotoPerfil.png\" alt=\"\">\n</div>\n<!-- Note List -->\n<div class=\"wrapper\">\n\t<mat-card class=\"note_list center\">\n\t\t<mat-card-header>\n\t\t\t<mat-card-title class=\"note_list_title\">To do list!</mat-card-title>\n\t\t\t<!-- <mat-card-subtitle>Feel free to add, edit or delete any task or item that you want</mat-card-subtitle> -->\n\t\t</mat-card-header>\n\t\t<mat-card-content>\n\t\t\t<ul>\n\t\t\t\t<li class=\"text font\" *ngFor=\"let item of items; let i = index;\">\n\t\t\t\t\t<div class=\"list_item\">\n\t\t\t\t\t\t<button mat-button (click)=\"expandDescription(i)\">\n\t\t\t\t\t\t\t<i [id]=\"i\" class=\"material-icons\">expand_more</i>\n\t\t\t\t\t\t</button>\n\t\t\t\t\t\t{{item.title}}\n\t\t\t\t\t\t<button mat-button class=\"edit_button\">\n\t\t\t\t\t\t\t<i class=\"material-icons\">edit</i>\n\t\t\t\t\t\t</button>\n\t\t\t\t\t\t<button mat-button class=\"delete_button\">\n\t\t\t\t\t\t\t<i class=\"material-icons\">delete</i>\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div *ngIf=\"showDescription[i]\" class=\"description_text\">\n\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t{{item.description}}\n\t\t\t\t\t\t</p>\n\t\t\t\t\t</div>\n\t\t\t\t</li>\n\t\t\t</ul>\n\t\t</mat-card-content>\n\t\t<mat-card-actions class=\"notes_footer\">\n\t\t\t<button mat-fab (click)=\"openDialog()\">\n\t\t\t\t<i class=\"material-icons\">add</i>\n\t\t\t</button>\n\t\t</mat-card-actions>\n\t</mat-card>\n</div>"
+module.exports = "<!-- Toolbar -->\n<mat-toolbar class=\"toolbar\">\n\t<span>Demo App</span>\n\t<span class=\"toolbar_spacer\"></span>\n\t<button mat-button [matMenuTriggerFor]=\"menu\">\n\t\t<i class=\"material-icons\">menu</i>\n\t</button>\n\t<mat-menu class=\"menu_button\" #menu=\"matMenu\">\n\t\t<button mat-menu-item>Item 1</button>\n\t\t<button mat-menu-item>Item 2</button>\n\t</mat-menu>\n</mat-toolbar>\n<!-- Profile Banner -->\n<div class=\"banner_container\">\n\t<h1 class=\"banner_flex\">Full Stack Demo CRUD App</h1>\n\t<h3 class=\"banner_flex\">MongoDB, Express, Angular and NodeJS </h3>\n\t<h4 class=\"banner_flex\">(MEAN)</h4>\n\t<h5 class=\"banner_flex\">By: David Pazmino</h5>\n\t<div class=\"banner kenburns-top\">\n\n\t</div>\n</div>\n\n<div class=\"wrapper\">\n\t<img class=\"profile_image center\" src=\"assets/FotoPerfil.png\" alt=\"\">\n</div>\n<!-- Note List -->\n<div class=\"wrapper\">\n\t<mat-card class=\"note_list center\">\n\t\t<mat-card-header>\n\t\t\t<mat-card-title class=\"note_list_title\">To do list!</mat-card-title>\n\t\t\t<!-- <mat-card-subtitle>Feel free to add, edit or delete any task or item that you want</mat-card-subtitle> -->\n\t\t</mat-card-header>\n\t\t<mat-card-content>\n\t\t\t<ul>\n\t\t\t\t<li class=\"text font\" *ngFor=\"let item of items; let i = index;\">\n\t\t\t\t\t<div class=\"list_item\">\n\t\t\t\t\t\t<button mat-button (click)=\"expandDescription(i)\">\n\t\t\t\t\t\t\t<i [id]=\"i\" class=\"material-icons\">expand_more</i>\n\t\t\t\t\t\t</button>\n\t\t\t\t\t\t{{item.title}}\n\t\t\t\t\t\t<button mat-button class=\"edit_button\" (click)=\"updateDeleteCollection(i, item.title, item.description, false)\">\n\t\t\t\t\t\t\t<i class=\"material-icons\">edit</i>\n\t\t\t\t\t\t</button>\n\t\t\t\t\t\t<button mat-button class=\"delete_button\" (click)=\"updateDeleteCollection(i, item.title, item.description, true)\">\n\t\t\t\t\t\t\t<i class=\"material-icons\">delete</i>\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div *ngIf=\"showDescription[i]\" class=\"description_text\">\n\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t{{item.description}}\n\t\t\t\t\t\t</p>\n\t\t\t\t\t</div>\n\t\t\t\t</li>\n\t\t\t</ul>\n\t\t</mat-card-content>\n\t\t<mat-card-actions class=\"notes_footer\">\n\t\t\t<button mat-fab (click)=\"openDialog()\">\n\t\t\t\t<i class=\"material-icons\">add</i>\n\t\t\t</button>\n\t\t</mat-card-actions>\n\t</mat-card>\n</div>"
 
 /***/ }),
 
@@ -315,13 +358,21 @@ var HomePageComponent = /** @class */ (function () {
     function HomePageComponent(dialog, db) {
         var _this = this;
         this.dialog = dialog;
+        this.db = db;
+        // Firebase Data
+        this.items = [];
+        this.idItems = [];
         // Expand variables
         this.iconExpandText = 'more';
         this.showDescription = [];
         // Firebase Data call
-        db.collection('items').valueChanges().subscribe(function (data) {
-            console.log(data);
-            _this.items = data;
+        db.collection('items').snapshotChanges().subscribe(function (data) {
+            _this.items = [];
+            _this.idItems = [];
+            data.forEach(function (element) {
+                _this.items.push(element.payload.doc.data());
+                _this.idItems.push(element.payload.doc.id);
+            });
         });
     }
     /**
@@ -355,6 +406,20 @@ var HomePageComponent = /** @class */ (function () {
             this.showDescription[i] = true;
             this.iconExpandText = 'more';
         }
+    };
+    HomePageComponent.prototype.updateDeleteCollection = function (index, title, description, deleteController) {
+        var dialogRef = this.dialog.open(_common_common_dialog_common_dialog_component__WEBPACK_IMPORTED_MODULE_2__["CommonDialogComponent"], {
+            width: '250px',
+            data: {
+                title: title,
+                description: description,
+                id: this.idItems[index],
+                deleteController: deleteController,
+            }
+        });
+        dialogRef.afterClosed().subscribe(function (result) {
+            console.log('The update dialog was closed');
+        });
     };
     HomePageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({

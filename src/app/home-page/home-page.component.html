@@ -39,10 +39,10 @@
 							<i [id]="i" class="material-icons">expand_more</i>
 						</button>
 						{{item.title}}
-						<button mat-button class="edit_button">
+						<button mat-button class="edit_button" (click)="updateDeleteCollection(i, item.title, item.description, false)">
 							<i class="material-icons">edit</i>
 						</button>
-						<button mat-button class="delete_button">
+						<button mat-button class="delete_button" (click)="updateDeleteCollection(i, item.title, item.description, true)">
 							<i class="material-icons">delete</i>
 						</button>
 					</div>

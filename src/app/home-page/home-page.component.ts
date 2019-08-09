@@ -12,16 +12,20 @@ import { AngularFirestore } from '@angular/fire/firestore';
 
 export class HomePageComponent {
   // Firebase Data
-  items: any;
+  items = [];
+  idItems = [];
   // Expand variables
   iconExpandText = 'more'; 
   showDescription = [];
-
-  constructor(public dialog: MatDialog, db: AngularFirestore) {
+  constructor(public dialog: MatDialog, private db: AngularFirestore) {
     // Firebase Data call
-    db.collection('items').valueChanges().subscribe(data => {
-      console.log(data);
-      this.items = data;
+    db.collection('items').snapshotChanges().subscribe(data => {
+      this.items = [];
+      this.idItems = [];
+      data.forEach(element => {
+        this.items.push(element.payload.doc.data());
+        this.idItems.push(element.payload.doc.id);
+      });
     });
   }
 
@@ -58,4 +62,18 @@ export class HomePageComponent {
     }
   }
 
+  updateDeleteCollection(index: number, title: string, description: string, deleteController: boolean) {
+    const dialogRef = this.dialog.open(CommonDialogComponent, {
+      width: '250px',
+      data: {
+        title: title,
+        description: description,
+        id: this.idItems[index],
+        deleteController: deleteController,
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The update dialog was closed');
+    });
+  }
 }
