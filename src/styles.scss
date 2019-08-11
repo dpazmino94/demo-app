@@ -92,7 +92,7 @@ ul {
 	height: 25rem;
 	background-size: cover;
 	background-position: right;
-	width: 100rem;
+	width: 100%;
     position: absolute;
     z-index: -1;
 }
@@ -100,6 +100,12 @@ ul {
 	-webkit-animation: kenburns-top 2s ease-in alternate-reverse backwards;
 	        animation: kenburns-top 2s ease-in alternate-reverse backwards;
 }
+
+@media only screen and (max-width: 480px) {
+	mat-card {
+		width: 24rem !important;
+	}
+  }
 
 // Profile Image Styles
 .profile_image {

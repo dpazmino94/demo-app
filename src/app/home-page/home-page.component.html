@@ -7,18 +7,16 @@
 		<i class="material-icons">menu</i>
 	</button>
 	<mat-menu class="menu_button" #menu="matMenu">
-		<button mat-menu-item (click)="enterAdminMode()">Enter on Admin mode</button>
-		<button mat-menu-item>Item 2</button>
+		<button mat-menu-item *ngIf="!onAdminMode" (click)="enterAdminMode(false)">Start Admin mode</button>
+		<button mat-menu-item *ngIf="onAdminMode" (click)="enterAdminMode(true)">Exit Admin Mode</button>
 	</mat-menu>
 </mat-toolbar>
 <!-- Profile Banner -->
 <div class="banner_container">
-	<h1 class="banner_flex">Full Stack Demo CRUD App</h1>
-	<h3 class="banner_flex">MongoDB, Express, Angular and NodeJS </h3>
-	<h4 class="banner_flex">(MEAN)</h4>
-	<h5 class="banner_flex">By: David Pazmino</h5>
-	<div class="banner kenburns-top">
-
+	<h1 class="banner_flex">Programming Challenge</h1>
+	<h3 class="banner_flex">Angular, Firebase, Redux 4, Moment.js, Karma and Jasmine</h3>
+	<h5 class="banner_flex">By David Pazmino</h5>
+	<div class="banner">
 	</div>
 </div>
 

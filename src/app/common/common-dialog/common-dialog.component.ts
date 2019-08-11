@@ -1,7 +1,6 @@
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Component, OnInit, Inject, AfterContentInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import * as moment from 'moment';
 
 @Component({
   selector: 'app-common-dialog',
@@ -54,7 +53,7 @@ export class CommonDialogComponent implements AfterContentInit {
     this.dataItems = {
       title: this.title,
       description: this.description,
-      createdOn: moment().calendar(new Date())
+      createdOn: (new Date() + '')
     };
     // This if controls the Update, Delete and Create functionality
     if (this.data.title) { 

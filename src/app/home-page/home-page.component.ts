@@ -1,9 +1,11 @@
 import { MatDialog } from '@angular/material/dialog';
-import { CommonDialogComponent } from './../common/common-dialog/common-dialog.component';
 import { Component, AfterContentInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { CommonDialogComponent } from '../common/common-dialog/common-dialog.component';
+import * as moment from 'moment';
+
 interface AdminMode {
   password: boolean;
 }
@@ -17,23 +19,27 @@ interface AdminMode {
 export class HomePageComponent implements AfterContentInit {
   // Redux variable state
   password$: Observable<boolean>;
-  // Firebase Data
+  // Firebase Array Data variables
   items = [];
   idItems = [];
   // Expand variables
   iconExpandText = 'more';
+  // Description array variable
   showDescription = [];
+  // Admin mode button toggle
+  onAdminMode = false;
   constructor(
     public dialog: MatDialog,
     private db: AngularFirestore,
-    private store: Store<AdminMode>) 
-  {
+    private store: Store<AdminMode>) {
     // Firebase Data call
     db.collection('items').snapshotChanges().subscribe(data => {
       this.items = [];
       this.idItems = [];
-      data.forEach(element => {
+      data.forEach((element, index) => {
         this.items.push(element.payload.doc.data());
+        let temporalDate = Date.parse(this.items[index].createdOn)
+        this.items[index].createdOn = moment(new Date(temporalDate)).calendar();
         this.idItems.push(element.payload.doc.id);
       });
     });
@@ -101,15 +107,26 @@ export class HomePageComponent implements AfterContentInit {
     });
   }
 
-  enterAdminMode() {
-    const dialogRef = this.dialog.open(CommonDialogComponent, {
-      width: '300px',
-      data: {
-        state: true
-      }
-    });
-    dialogRef.afterClosed().subscribe(password => {
-      this.store.dispatch({type: password})
-    });
-  }  
+  /**
+   * This function calls the Redux State variable to activate the Admin Mode
+   *
+   * @memberof HomePageComponent
+   */
+  enterAdminMode(exit: boolean) {
+    if (!exit) {
+      const dialogRef = this.dialog.open(CommonDialogComponent, {
+        width: '300px',
+        data: {
+          state: true
+        }
+      });
+      dialogRef.afterClosed().subscribe(password => {
+        this.onAdminMode = (password === 'admin123')? true: false;
+        this.store.dispatch({ type: password });
+      });
+    } else {
+      this.onAdminMode = false;
+      this.store.dispatch({ type: 'x' });
+    }
+  }
 }
