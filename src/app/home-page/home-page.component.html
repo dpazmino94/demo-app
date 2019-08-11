@@ -1,0 +1,67 @@
+<!-- Toolbar -->
+<mat-toolbar class="toolbar">
+	<span>Demo App</span>
+	<span class="toolbar_spacer"></span>
+	<span *ngIf="password$ | async">Admin Mode</span>
+	<button mat-button [matMenuTriggerFor]="menu">
+		<i class="material-icons">menu</i>
+	</button>
+	<mat-menu class="menu_button" #menu="matMenu">
+		<button mat-menu-item *ngIf="!onAdminMode" (click)="enterAdminMode(false)">Start Admin mode</button>
+		<button mat-menu-item *ngIf="onAdminMode" (click)="enterAdminMode(true)">Exit Admin Mode</button>
+	</mat-menu>
+</mat-toolbar>
+<!-- Profile Banner -->
+<div class="banner_container">
+	<h1 class="banner_flex">Programming Challenge</h1>
+	<h3 class="banner_flex">Angular, Firebase, Redux 4, Moment.js, Karma and Jasmine</h3>
+	<h5 class="banner_flex">By David Pazmino</h5>
+	<div class="banner">
+	</div>
+</div>
+
+<div class="wrapper">
+	<img class="profile_image center" src="assets/FotoPerfil.png" alt="">
+</div>
+<!-- Note List -->
+<div class="wrapper">
+	<mat-card class="note_list center">
+		<mat-card-header>
+			<mat-card-title class="note_list_title">To do list!</mat-card-title>
+			<!-- <mat-card-subtitle>Feel free to add, edit or delete any task or item that you want</mat-card-subtitle> -->
+		</mat-card-header>
+		<mat-card-content>
+			<ul>
+				<li class="text font" *ngFor="let item of items; let i = index;">
+					<div class="list_item">
+						<button mat-button (click)="expandDescription(i)">
+							<i [id]="i" class="material-icons">expand_more</i>
+						</button>
+						{{item.title}}
+						<button mat-button class="edit_button" *ngIf="password$ | async"
+							(click)="updateDeleteCollection(i, item.title, item.description, false)">
+							<i class="material-icons">edit</i>
+						</button>
+						<button mat-button class="delete_button" *ngIf="password$ | async"
+							(click)="updateDeleteCollection(i, item.title, item.description, true)">
+							<i class="material-icons">delete</i>
+						</button>
+					</div>
+					<div *ngIf="showDescription[i]" class="description_text">
+						<p>
+							{{item.description}} <span class="description_date">
+								-Added {{item.createdOn}}
+							</span>
+						</p>
+
+					</div>
+				</li>
+			</ul>
+		</mat-card-content>
+		<mat-card-actions class="notes_footer">
+			<button mat-fab (click)="openDialog()" *ngIf="password$ | async">
+				<i class="material-icons">add</i>
+			</button>
+		</mat-card-actions>
+	</mat-card>
+</div>
